@@ -1,0 +1,43 @@
+<body ng-app="ionicApp">
+<ion-content >
+<div ng-controller="mapsCtrl"> 
+<div id="reportHeader">
+<a href="#/main" id="backButton" class="button button-icon icon ion-ios-arrow-left"></a>
+</div>
+<div id="imgFooter">
+<i style="font-size: 30px;color:#fff; margin-left:15px;"class="icon ion-ios-location"></i>
+<span style="position:absolute; line-height:40px; margin-left: 15px; color:#fff;">{{getTargetLocation()}}</span>
+</div>
+<img data-ng-src="{{theImage}}" style="width: 100%;"/> 
+</div>
+<div style="width:100;" id="ovarallRating">
+<img id="epicShaka" src="templates/shaka.png"/>
+<span id="surfRating">The surf is good!</span>
+</div>
+<hr style="width:90%;">
+<div id="commentSection">
+<i style="font-size:45px; color:#e6e6e6; margin-left: 5%;"class="icon ion-quote"></i><span style="margin-left:5%; position: absolute; line-height: 70px;">The surf will get better as the tide comes in </span>
+</div>
+<div  id="dataSection">
+<div class="dataFormatt">
+<img class="surfIcons" src="templates/wetsuit.png" />
+<span class="dataText">Summer</span>
+</div>
+<div class="dataFormatt">
+<img class="surfIcons" src="templates/tide.png" /> 
+    <span class="dataText">Low</span>
+</div>
+<div class="dataFormatt">
+<img class="surfIcons" src="templates/crowd.png" />  
+<span class="dataText">10 - 20</span>
+</div>
+<div style="border-right: none !important;" class="dataFormatt">
+<img class="surfIcons" src="templates/wave.png" />  
+<span class="dataText">4 - 6</span>
+</div>
+</div>
+<div>
+    
+</div>
+</ion-content>
+</body>

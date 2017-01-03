@@ -1,0 +1,54 @@
+<ion-pane ng-controller="ListChildController">
+<ion-view>
+     <ion-content >
+            <div style="width:100%; height:20px; background-color:#2f3d4c;"></div>
+        <ion-list padding="false">
+
+            <div id="reportHeader">
+                <a href="#/main" id="backButton" class="button button-icon icon ion-ios-arrow-left"></a>
+            </div>
+               <ion-item id="childPhoto" class="item-text-wrap"
+                      ng-model="profileDetails" padding="false">
+                <img data-ng-src="{{profileDetails.image}}" width="100%">
+            </ion-item>
+     <div id="imgFooter">
+            <ion-item id="imgFooter" class="item-text-wrap"
+                      ng-model="profileDetails">
+                <i id="locationIcon" class="icon ion-ios-location"></i>
+                        <span id="theLocation">{{profileDetails.myLocation}}</span>
+            </ion-item>
+        </div>
+        <div id="ovarallRating">
+            <img id="epicShaka" src="templates/img/shaka.png" />
+            <span id="surfRating">The surf is {{profileDetails.Rating}}!</span>
+        </div>
+        <hr style="width:90%;">
+        <div id="commentSection">
+            <i id="quoteIcon" class="icon ion-quote"></i><span id="theComments">{{profileDetails.Note}}</span>
+        </div>
+        <div id="dataSection">
+            <div class="dataFormatt">
+                <img class="surfIcons" src="templates/img/wetsuit.png" />
+                <span class="dataText">{{profileDetails.Wetsuit}}</span>
+            </div>
+            <div class="dataFormatt">
+                <img class="surfIcons" src="templates/img/tide.png" />
+                <span class="dataText">{{profileDetails.Tide}}</span>
+            </div>
+            <div class="dataFormatt">
+                <img class="surfIcons" src="templates/img/crowd.png" />
+                <span class="dataText">{{profileDetails.CrowdMin}} - {{profileDetails.CrowdMax}}</span>
+            </div>
+            <div style="border-right: none !important;" class="dataFormatt">
+                <img class="surfIcons" src="templates/img/wave.png" />
+                <span class="dataText">{{profileDetails.WaveMin}} - {{profileDetails.WaveMax}}</span>
+            </div>
+            <div><br/></div>
+        </div>
+        <div>
+        </div>
+            
+        </ion-list>
+    </ion-content>
+</ion-view>
+</ion-pane>

@@ -1,0 +1,133 @@
+a.button.button-icon.ion-plus {
+margin-left: 28%;
+}
+.scroll {
+    height: 100%;
+}
+ 
+#map {
+    width: 100%;
+    height: 100%;
+}
+.item {border: #fff;}
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+.gm-style-iw{
+    max-height: 45px;
+}
+.button.button-calm.button-clear {
+    color: #69D9EA;
+}
+div#reportHeader {
+    background-color: rgba(0, 0, 0, 0.03);
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+.surfIcons {
+    width: 55px;
+    height: 55px;
+}
+.dataText{
+    display: block
+}
+.dataFormatt {
+    margin-top: 3%;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    border-right: 1px solid #e6e6e6;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+a#backButton {
+    color: #fff;
+    z-index: 2;
+}
+img#epicShaka {
+    margin-left: 25%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+span#surfRating {
+    line-height: 133px;
+    position: absolute;
+    margin-left: 5%;
+}
+div#imgFooter {
+    background-color: rgba(47, 61, 76, 0.25);
+    position: absolute;
+    margin-top: 89%;
+    width: 100%;
+}
+#shaka {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 3px;
+}
+div#addressInput {
+    border: 5px solid #69D9EA;
+}
+.button.button-balanced {
+    background-color: #ffc03f !important;
+}
+#Mid {
+    border-left: 1px solid #F5F5F5;
+    border-right: 1px solid #F5F5F5;
+    
+}
+.toggle input:checked + .track .handle {
+    background-color: #69D9EA;
+}
+.toggle input:checked + .track {
+    border-color: #B0EBF4;
+    background-color: #B0EBF4;
+}
+input#crowdValMin {
+    display: inline;
+    width: 29px;
+    background-color: #f1f1f1 !important;
+    margin-right: -4%;
+    padding-top: 0px !important;
+}
+input#crowdValMax {
+    display: inline;
+    width: 29px;
+    background-color: #f1f1f1 !important;
+    padding-top: 0px !important;
+}
+input#waveValMin {
+    display: inline;
+    width: 29px;
+    background-color: #f1f1f1 !important;
+    margin-right: -4%;
+    padding-top: 0px !important;
+}
+input#waveValMax {
+    display: inline;
+    width: 29px;
+    background-color: #f1f1f1 !important;
+    padding-top: 0px !important;
+}
+input#windSpeed {
+    display: inline;
+    width: 70px;
+    background-color: #f1f1f1 !important;
+    padding-top: 0px !important;
+}
+
+.sliderBox {
+    background-color: #fff;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    padding: 10px 15px 0px 15px;
+    border-radius: 5px;
+}
+#markerLayer img {
+        width: 75px !important;
+        height:75px !important;
+      }

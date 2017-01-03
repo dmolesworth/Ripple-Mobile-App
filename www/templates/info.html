@@ -1,0 +1,76 @@
+
+<body ng-app="ionicApp" ng-controller="MainCtrl">
+    <ion-header-bar class="bar-dark">
+        <a href="#/main" class="button button-icon icon ion-ios-arrow-left"></a>
+        <a href="#/main" ng-click="pushData()" ng-controller="sendData" class="button button-icon" style="color: #69D9EA; font-weight:600;">DONE</a>
+    </ion-header-bar>
+
+    <ion-content padding="true" style="background-color: #f1f1f1;">
+
+        <div class="list">
+            <ion-google-place placeholder="Your Location" id="addressInput" name="address" location-changed="locationChanged" />
+        </div>
+
+        <div ng-controller="MainCtrl">
+            <i id="infoHeadings" class="icon ion-ios-people"> People Surfing: </i>
+            <input type="number" id="crowdValMin" ng-model="sliderCrowd.minValue" disabled/>
+            <span>- </span>
+            <input type="number" id="crowdValMax" ng-model="sliderCrowd.maxValue" disabled/>
+            <div class="sliderBox">
+                <rzslider rz-slider-model="sliderCrowd.minValue" rz-slider-high="sliderCrowd.maxValue" rz-slider-options="sliderCrowd.options">
+                </rzslider>
+            </div>
+            
+            <i id="infoHeadings" class="icon ion-navicon"> Wave Height (feet): </i>
+            <input type="number" id="waveValMin" ng-model="sliderWave.minWaveValue" disabled/>
+            <span>- </span>
+            <input type="number" id="waveValMax" ng-model="sliderWave.maxWaveValue" disabled/>
+            <div class="sliderBox">
+                <rzslider rz-slider-model="sliderWave.minWaveValue" rz-slider-high="sliderWave.maxWaveValue" rz-slider-options="sliderWave.options">
+                </rzslider>
+            </div>
+            
+            <i id="infoHeadings" class="icon ion-contrast"> Tide: </i>
+            <div class="card" style="box-shadow:none; border-radius:5px;">
+                <div class="button-bar">
+                    <button id="Low" data-ng-click="low()" class="button {{lowbuttonStyle}}">Low
+    </button>
+                    <button id="Mid" data-ng-click="mid()" class="button {{midbuttonStyle}}">Mid
+    </button>
+                    <button id="High" data-ng-click="high()" class="button {{highbuttonStyle}}">High
+    </button>
+                </div>
+            </div>
+            <i id="infoHeadings" class="icon ion-ios-body"> Wetsuit: </i>
+            <div class="sliderBox">
+                <ion-toggle ng-change="toggleChangeSummer()" ng-model="langToggle.summer" ng-click="langToggle.summer = !false; langToggle.winter = false">
+                    Summer
+                </ion-toggle>
+                <ion-toggle ng-change="toggleChangeWinter()" ng-model="langToggle.winter" ng-click="langToggle.winter = !false; langToggle.summer = false">
+                    Winter
+                </ion-toggle>
+            </div>
+
+            <p id="infoHeadings">Overall Rating:</p>   
+            <div class="card" style="box-shadow:none; border-radius:5px;" ng-controller="MainCtrl">
+                <div class="button-bar">
+                    <button id="bad" data-ng-click="bad()" class="button {{badbuttonStyle}}"><i class="icon ion-thumbsdown"></i>
+    </button>
+                    <button id="good" data-ng-click="good()" class="button {{goodbuttonStyle}}"><i class="icon ion-thumbsup"></i>
+    </button>
+                    <button id="epic" data-ng-click="epic()" class="button {{epicbuttonStyle}}"><img id="shaka" src="templates/img/shaka.png">
+    </button>
+                </div>
+            </div>
+        </div>
+        <!--End of Main Controller -->
+        <div class="button-bar">
+            <button style="border-right: 2px solid rgba(0, 0, 0, 0.1);" ng-click="chooseMedia(&apos;photo&apos;)" class="button button-block {{hasGallery}}"><i class="icon ion-images"></i></button>
+            <button ng-click="getPhoto()" class="button button-block {{hasPic}}"><i class="icon ion-camera"></i></button>
+        </div>
+        <!--<img ng-show="photoPreview" ng-src="{{photoPreview}}" style="width: 100%"> -->
+        <label style="margin: 10px 0px 15px 0px;" class="item item-input" ng-controller="MainCtrl">
+<textarea id="theNotes" type="text" placeholder="Anything Else?"></textarea>
+</label>
+    </ion-content>
+</body>

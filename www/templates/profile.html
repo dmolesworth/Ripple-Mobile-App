@@ -1,0 +1,28 @@
+<ion-pane ng-controller="ListController">
+<ion-header-bar class="bar-dark">
+        <a href="#/main" class="button button-icon icon ion-ios-arrow-left"></a>
+    <h2 class="title">Search</h2>
+</ion-header-bar>
+<ion-view>
+<div class="bar bar-subheader item-input-inset bar-light">
+    <label class="item-input-wrapper">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="search" placeholder="Search" ng-model="query">
+    </label>
+</div>
+<ion-content padding="true" class="has-subheader">
+    <ion-list>
+        
+        <ion-item ng-repeat="item in report | filter: query" 
+                  class="item-thumbnail-left item-text-wrap list card"
+                  ui-sref="child({aId:item.Time})">
+                <img data-ng-src="{{item.image}}">
+        <h2><i id="searchIcon" class="icon icon-left ion-ios-location"></i> {{item.myLocation | limitTo: 17}}...</h2>
+            
+            <p><img id="searchIcon" src="templates/img/iwave.png"/> {{item.WaveMin}} - {{item.WaveMax}} ft</p>
+            <p><i id="searchIcon" class="icon icon-left ion-quote"></i> {{item.Note | limitTo: 50}}...</p>
+        </ion-item>
+    </ion-list>
+</ion-content>
+</ion-view>
+</ion-pane>

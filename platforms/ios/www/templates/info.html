@@ -1,0 +1,88 @@
+<body ng-app="ionicApp" ng-controller="MainCtrl">
+<ion-header-bar class="bar-dark">
+        <a href="#/main" class="button button-icon icon ion-ios-arrow-left"></a>
+     <h2 class="title">NEW REPORT</h2>
+     <a href="#/main" ng-click="pushData()" ng-controller="sendData" class="button button-icon" style="color: #69D9EA">DONE</a>
+</ion-header-bar>
+
+<ion-content padding="true" style="background-color: #f1f1f1;">
+    
+<div class="list">
+<ion-google-place placeholder="Your Location" id="addressInput" name="address" location-changed="locationChanged" />
+</div>    
+
+<div ng-controller="MainCtrl">
+        <i class="icon ion-ios-people"> People Surfing: </i>
+
+<input type="number" id="crowdValMin" ng-model="sliderCrowd.minValue" disabled/>
+        <span>- </span>
+<input type="number" id="crowdValMax" ng-model="sliderCrowd.maxValue" disabled/>
+<div class="sliderBox">
+    <rzslider 
+              rz-slider-model="sliderCrowd.minValue" 
+              rz-slider-high="sliderCrowd.maxValue" 
+              rz-slider-options="sliderCrowd.options">
+    </rzslider>
+</div>
+<i class="icon ion-navicon"> Wave Height (feet): </i>
+<input type="number" id="waveValMin" ng-model="sliderWave.minWaveValue" disabled/>
+        <span>- </span>
+<input type="number" id="waveValMax" ng-model="sliderWave.maxWaveValue" disabled/>
+<div class="sliderBox">
+    <rzslider 
+              rz-slider-model="sliderWave.minWaveValue" 
+              rz-slider-high="sliderWave.maxWaveValue" 
+              rz-slider-options="sliderWave.options">
+    </rzslider>
+</div>
+<i class="icon ion-contrast"> Tide: </i>
+<div class="card">    
+   <div class="button-bar">
+    <button id="Low" data-ng-click="tideBtn($event); start()"  class="button button-clear {{buttonStyle}}">Low
+    </button> 
+    <button id="Mid" data-ng-click="tideBtn($event)" class="button button-clear button-dark">Mid
+    </button>
+        <button id="High" data-ng-click="tideBtn($event)" class="button button-clear button-dark">High
+    </button>
+</div>      
+</div>
+<i class="icon ion-ios-body"> Wetsuit: </i>
+<div class="sliderBox">
+		<ion-toggle  ng-model="langToggle.summer" ng-click="langToggle.summer = !false; langToggle.winter = false">
+			Summer
+		</ion-toggle>
+		<ion-toggle ng-change="toggleChange()" ng-model="langToggle.winter" ng-click="langToggle.winter = !false; langToggle.summer = false">
+			Winter
+		</ion-toggle> 
+</div>
+    
+<p>Overall Rating:</p>
+<!--    
+<div class="range range-assertive" ng-controller="sendData">
+  <i class="icon ion-ios-person"></i>
+  <input type="range" min="0" max="{{user.max}}" value="{{user.value}}" step="10" ng-model="user.value" name="user.value">
+    <h4 style="color: #EF473A">{{user.value}}</h4>
+  <i class="icon ion-ios-people"></i>
+</div>
+-->
+<div class="card">
+    <div class="button-bar">
+    <button id="bad" data-ng-click="ratingBtn($event); start()"  class="button button-clear {{buttonStyle}}"><i class="icon ion-thumbsdown"></i>
+    </button> 
+    <button id="good" data-ng-click="ratingBtn($event)" class="button button-clear button-dark"><i class="icon ion-thumbsup"></i>
+    </button>
+        <button id="epic" data-ng-click="ratingBtn($event)" class="button button-clear button-dark"><img id="shaka" src="templates/shaka.png">
+    </button>
+</div>      
+</div>
+</div> <!--End of Main Controller -->
+<div class="button-bar">
+<button  style="border-right: 2px solid #F1B130;" ng-click="chooseMedia(&apos;photo&apos;)" class="button button-block button-balanced"><i class="icon ion-images"></i></button>
+<button ng-click="getPhoto()" class="button button-block button-balanced"><i class="icon ion-camera"></i></button>
+</div>
+<!--<img ng-show="photoPreview" ng-src="{{photoPreview}}" style="width: 100%"> -->
+<label style="margin: 10px 0px 15px 0px;"  class="item item-input"  ng-controller="MainCtrl">
+<textarea id="theNotes" type="text" placeholder="Anything Else?"></textarea>
+</label>
+</ion-content>
+</body>

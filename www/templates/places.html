@@ -1,0 +1,11 @@
+
+<ion-header-bar class="bar-dark">
+        <a href="#/main" class="button button-icon icon ion-ios-arrow-left"></a>
+        <h2 class="title">Gallery</h2>
+</ion-header-bar>
+<ion-content padding="false" ng-controller="ListController" class="gallery">
+<span ng-repeat="image in report"
+      ui-sref="child({aId:image.Time})">
+    <img src="{{image.image}}" id="imgGrid" >
+  </span>
+</ion-content>
