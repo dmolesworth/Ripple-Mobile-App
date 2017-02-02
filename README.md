@@ -1,3 +1,4 @@
 # Ripple-Mobile-App
 <p>developed as a concept mobile application, I developed the application as a hybrid mobile app using <a href="https://ionicframework.com/" target="_blank">Ionic Framework</a>, along with <a href="https://docs.angularjs.org/guide/introduction" target="_blank">Angular JS</a> and <a href="https://cordova.apache.org/" target="_blank">Apache cordova</a>; using <a href="https://firebase.google.com/" target="_blank">Firebase</a> as the data store and <a href="https://developers.google.com/maps/" target="_blank">Google Maps API</a> to display uploaded data. The application used data provided by the user to plot surf reports on a map that coould be shared by with a group of users.</p>
 <p>The application takes user input and send the data to Firebase. New  data recieved by firebase is pushed down to the application and plotted on a map using users location data.</p>
+<img src="https://dmolesworth.github.io/img/featureRipple.png">
